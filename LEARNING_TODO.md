@@ -8,8 +8,8 @@
 
 ## Progress Tracker
 
-- [ ] Environment setup complete (GLFW, OpenGL bindings)
-- [ ] Basic window creation working
+- [X] Environment setup complete (GLFW, OpenGL bindings)
+- [X] Basic window creation working
 - [ ] Completed LearnOpenGL fundamentals
 - [ ] Built camera system
 - [ ] Understanding of SPH physics
@@ -31,13 +31,13 @@
 ---
 
 #### 📝 Task 1.2: Hello Triangle
-**Status:** ⬜ TODO  
+**Status:** ✅ COMPLETE  
 **What:** Draw your first triangle using VBOs and shaders  
 **Goal:** Understand the complete render pipeline
 
 **Key Concepts to Learn:**
-- Vertex Buffer Object (VBO) - stores vertex data on GPU
-- Vertex Array Object (VAO) - describes how to read VBO data
+- Vertex Buffer Object (VBOTriangle1) - stores vertex data on GPU
+- Vertex Array Object (VAO) - describes how to read VBOTriangle1 data
 - Vertex shader - transforms vertex positions
 - Fragment shader - colors pixels
 - Shader compilation and linking
@@ -48,15 +48,15 @@
 
 **C++ to Go Translation Guide:**
 
-**Creating a VBO (C++):**
+**Creating a VBOTriangle1 (C++):**
 ```cpp
-unsigned int VBO;
-glGenBuffers(1, &VBO);
-glBindBuffer(GL_ARRAY_BUFFER, VBO);
+unsigned int VBOTriangle1;
+glGenBuffers(1, &VBOTriangle1);
+glBindBuffer(GL_ARRAY_BUFFER, VBOTriangle1);
 glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 ```
 
-**Creating a VBO (Go):**
+**Creating a VBOTriangle1 (Go):**
 ```go
 var vbo uint32
 gl.GenBuffers(1, &vbo)
@@ -76,9 +76,9 @@ glEnableVertexAttribArray(0);
 
 **Creating a VAO (Go):**
 ```go
-var vao uint32
-gl.GenVertexArrays(1, &vao)
-gl.BindVertexArray(vao)
+var vaoTriangle1 uint32
+gl.GenVertexArrays(1, &vaoTriangle1)
+gl.BindVertexArray(vaoTriangle1)
 gl.VertexAttribPointer(0, 3, gl.FLOAT, false, 3*4, nil)
 gl.EnableVertexAttribArray(0)
 // Note: stride is 3*4 (3 floats * 4 bytes each)
@@ -94,13 +94,13 @@ vertices := []float32{
 ```
 
 **Your Tasks:**
-- [ ] Create a VBO with triangle vertices
-- [ ] Create a VAO to describe vertex layout
-- [ ] Write a simple vertex shader (pass-through)
-- [ ] Write a simple fragment shader (solid color)
-- [ ] Compile and link shaders
-- [ ] Draw the triangle with `gl.DrawArrays(gl.TRIANGLES, 0, 3)`
-- [ ] Complete the exercises at the end of the tutorial
+- [x] Create a VBOTriangle1 with triangle vertices
+- [x] Create a VAO to describe vertex layout
+- [x] Write a simple vertex shader (pass-through)
+- [x] Write a simple fragment shader (solid color)
+- [x] Compile and link shaders
+- [x] Draw the triangle with `gl.DrawArrays(gl.TRIANGLES, 0, 3)`
+- [x] Complete the exercises at the end of the tutorial
 
 **Success Criteria:** Orange triangle on screen
 
@@ -610,7 +610,7 @@ W(r, h) = (15 / (π h⁶)) * (h - r)³   if 0 ≤ r ≤ h
 Can you answer these questions confidently?
 
 #### OpenGL Fundamentals:
-- [ ] What is a VBO and what data does it store?
+- [ ] What is a VBOTriangle1 and what data does it store?
 - [ ] What is a VAO and why do we need it?
 - [ ] What does a vertex shader do?
 - [ ] What does a fragment shader do?
@@ -634,7 +634,7 @@ Can you answer these questions confidently?
 - [ ] What are the main forces in fluid simulation? (pressure, viscosity, surface tension)
 
 #### Go + OpenGL:
-- [ ] How do you create and bind a VBO in Go?
+- [ ] How do you create and bind a VBOTriangle1 in Go?
 - [ ] How do you send a matrix to a shader in Go?
 - [ ] How do you handle null-terminated strings in Go OpenGL? (`\x00`)
 - [ ] What does `gl.Ptr()` do?
